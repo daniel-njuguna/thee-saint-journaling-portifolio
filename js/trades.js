@@ -19,6 +19,21 @@ function createTradeRow(tradeNumber, entryDate, fxPair, lor, entryPrice, stop, f
     image.className = "trade-image";
     imageCell.appendChild(image);
 }
+function openImageModal(imageUrl) {
+    const modal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+
+    modal.style.display = "block";
+    modalImage.src = imageUrl;
+}
+
+// Close the modal when the close button or outside the modal is clicked
+window.onclick = function(event) {
+    const modal = document.getElementById("imageModal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
 
 // Function to generate trades
 function generateTrades() {
@@ -208,7 +223,7 @@ function generateTrades() {
             profitLoss: "+20",
             pips: "+10",
             entryLossDate: "2023-04-06",
-            imageUrl: "images/0405.png"
+            imageUrl: "images/date0405.png"
         },
         {
             tradeNumber: 14,
